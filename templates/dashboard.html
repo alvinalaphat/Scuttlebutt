@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Scuttlebutt</title>
+<link rel="icon" href="static/images/soccer-icon.png">
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+
+.form-group {
+  margin:0;
+  padding:20px ;
+}
+
+.form-control {
+  padding: 0px 10px 0 20px;
+  margin-top: 10px;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 300;
+    border: 3px solid #0080FE;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    min-height:30px;
+    height: auto;
+    border-radius: 30px 0  0 30px !important;
+}
+.form-control :focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-color: transparent;
+
+}
+
+.searchbtn
+{ border:0;
+  padding: 0px 10px;
+  margin-top: 10px;
+  color: #fff;
+  background:rgb(0, 127, 255);
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 3px solid #0080FE;
+  border-left: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  min-height:30px;
+  height: auto;
+  border-radius: 0 30px 30px 0 !important;
+}
+
+.images {
+  background: url('static/images/soccer.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-size: 100% 100%;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card" style="height: 60px; margin-left: -22px; width: 130%; border-radius: 25px; border: 2px solid #000000">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" style="font-size: 14pt; margin-left: 10px; height: 60px;" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="#tour" style="font-size: 14pt; height: 60px;" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Purpose</a>
+    <a href="#contact" style="font-size: 14pt; height: 60px;" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button style="height: 60px; font-size: 14pt; margin-top: -5px;" class="w3-padding-large w3-button" title="More">Sources <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="https://www.theguardian.com/football/transfer-window" class="w3-bar-item w3-button">Guardian</a>
+        <a href="https://www.telegraph.co.uk/football-transfers/" class="w3-bar-item w3-button">Telegraph</a>
+        <a href="https://www.bbc.com/sport/football/gossip" class="w3-bar-item w3-button">BBC Sports</a>
+      </div>
+    </div>
+    <!-- <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a> -->
+  </div>
+</div>
+
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Purpose</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Sources</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content w3-black" style="max-width:2000px;margin-top:40px">
+
+  <!-- Main Section -->
+  <div class="images main-slide" style="height:750px">
+  <div class=" w3-container w3-content w3-center w3-padding-64">
+    <h2 class="w3-wide w3-opacity" style="margin-top: 90px;">SCUTTLEBUTT</h2>
+    <form method="post" action="." name="data">
+        <div class="title">
+            <input id="userSearchInput" type="text" name="words" class="form-control round" placeholder="Player or Team">
+            <input class="searchbtn" type="submit" id="submit" value="Search">
+            <br>
+            <br>
+        </div>
+    </form>
+    <p><i><strong>Your Hub for Football Transfer News</strong></i></p>
+    </div>
+  </div>
+</div>
+
+  <!-- Purpose Section -->
+  <div class="" style="background-color: #E5E8E8;height:800px; border-bottom: 3px solid; border-top: 3px solid;" id="tour">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide w3-center">PURPOSE</h2>
+      <p class="w3-opacity w3-center"><i>Get the inside scoop from the most trusted sources!</i></p><br>
+      <center><p style="font-size: 20pt;">
+          Scuttlebutt - a rumor; gossip.
+        <br><br>
+          Instant football transfer news and rumors acquired from the Telegraph, Guardian, BBC Sports and more. Enter the name of a player or team to receive all existing relevant rumors about them across multiple sources.
+        <br><br><br><br><br>
+          Feel free to drop feedback or send a message below!
+        </p></center>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+<div style="background-color: #E5E8E8;border-left: 3px; border-right: 3px; border-top: 0px solid;">
+  <div class="w3-container w3-content w3-padding-64" id="contact">
+    <h2 class="w3-wide w3-center">CONTACT</h2>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-user" style="width:30px"></i> Creator: Alvin Alaphat<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: alvinalaphat@gmail.com<br>
+        <i class="fa fa-map-marker" style="width:30px"></i> St. Louis, MO<br>
+      </div>
+      <div class="w3-col m6">
+        <form method="post" action="mailto:scuttlebutt@gmail.com">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" >
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" >
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" >
+          <button class="w3-button w3-black w3-section w3-right" onclick="this.form.reset();" type="submit">SEND</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<script>
+
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

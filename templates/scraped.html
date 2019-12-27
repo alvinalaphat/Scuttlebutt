@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Scuttlebutt</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 12pt;
+}
+.texter {
+  font-size: 10px;
+}
+.mySlides {
+  display: none;
+}
+
+.card {
+  background: white;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
+}
+
+.section {
+  margin-top: 50px;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.card article {
+  padding: 20px;
+  flex: 1;
+   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+ 
+.card:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+
+/* typography */
+.card h4 {
+  font-size: 20px;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+ 
+.card p { 
+  line-height: 1.4;
+}
+ 
+.card span {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 20px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 2em 0 0 0;
+}
+
+.band {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 50px;
+  display: grid;
+   
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+@media only screen and (min-width: 500px) {
+  .band {
+    grid-template-columns: 1fr 1fr;
+  }  
+}
+
+@media only screen and (min-width: 850px) {
+  .band {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.spinner {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  position: relative;
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 45px;
+  height: 45px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 1px solid #575757;
+  border-top-color: #ffffff;
+  animation: spinner .9s linear infinite;
+}
+</style>
+<body style="background-color: #E5E8E8;">
+
+<section class="preloader">
+  <div class="spinner">
+
+        <span class="spinner-rotate"></span>
+
+  </div>
+</section>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card" style="height: 60px; margin-left: -22px; width: 130%; border-radius: 25px; border: 2px solid #000000">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" style="font-size: 14pt; margin-left: 10px; height: 60px;" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="/" style="font-size: 14pt; height: 60px;" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Purpose</a>
+    <a href="/" style="font-size: 14pt; height: 60px;" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button style="height: 60px; font-size: 14pt; margin-top: -5px;" class="w3-padding-large w3-button" title="More">Sources <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="https://www.theguardian.com/football/transfer-window" class="w3-bar-item w3-button">Guardian</a>
+        <a href="https://www.telegraph.co.uk/football-transfers/" class="w3-bar-item w3-button">Telegraph</a>
+        <a href="https://www.bbc.com/sport/football/gossip" class="w3-bar-item w3-button">BBC Sports</a>
+      </div>
+    </div>
+    <!-- <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a> -->
+  </div>
+</div>
+
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Purpose</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Sources</a>
+</div>
+
+<!-- Page content -->
+    
+
+                {% block content %}
+                {% if data[0].rumor %}
+                <section>
+                    <div class="container">
+                        <div class="band">
+                  {% for i in data  %}
+                    <a href="{{i.link}}" class="card" style="text-decoration: none;">
+                      <article>
+                        <h4><strong>{{i.rumor}}</strong></h4>                      
+                      <span>{{ i.date }}</span>
+                    </article>
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+         </section>
+                {% else %}
+                <center>
+                    <section>
+                        <div class="container">
+                  <div>
+                <article><br><br><br><br><br>
+                  <h4><strong>{{ data }}</strong></h4>                      
+                </article>
+              </div>
+            </div>
+          </section>
+                </center>
+                {% endif %}
+                {% endblock content %}
+               
+
+
+            
+
+
+<script>
+
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

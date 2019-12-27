@@ -1,0 +1,1 @@
+web: gunicorn sports_rumors:app  -c gunicorn.conf.py 
